@@ -1,4 +1,5 @@
 package com.victor.bluetooth.plugin;
+
 import android.bluetooth.BluetoothAdapter;
 import android.bluetooth.BluetoothDevice;
 import android.bluetooth.BluetoothSocket;
@@ -105,3 +106,4 @@ public class BluetoothPlugin extends Plugin {
         call.resolve();
     }
 }
+
