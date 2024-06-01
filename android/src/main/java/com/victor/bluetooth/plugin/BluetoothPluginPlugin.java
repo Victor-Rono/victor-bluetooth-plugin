@@ -1,4 +1,4 @@
-package com.victor.bluetooth.plugin;
+// package com.victor.bluetooth.plugin;
 
 import com.getcapacitor.JSObject;
 import com.getcapacitor.Plugin;
