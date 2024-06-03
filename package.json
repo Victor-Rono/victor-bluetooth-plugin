@@ -1,6 +1,6 @@
 {
   "name": "victor-bluetooth-plugin",
-  "version": "0.0.3",
+  "version": "0.0.12",
   "description": "A plugin for connecting to classic BT devices on android",
   "main": "dist/plugin.cjs.js",
   "module": "dist/esm/index.js",
@@ -40,10 +40,11 @@
     "prettier": "prettier \"**/*.{css,html,ts,js,java}\"",
     "swiftlint": "node-swiftlint",
     "docgen": "docgen --api BluetoothPluginPlugin --output-readme README.md --output-json dist/docs.json",
-    "build": "npm run clean && npm run docgen && tsc && rollup -c rollup.config.js",
+    "build": "npm run clean && clear && npm run docgen && tsc && rollup -c rollup.config.js",
     "clean": "rimraf ./dist",
     "watch": "tsc --watch",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "publish":"clear && npm publish"
   },
   "devDependencies": {
     "@capacitor/android": "^6.0.0",
