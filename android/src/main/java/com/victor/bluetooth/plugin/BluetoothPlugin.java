@@ -23,8 +23,8 @@ import java.util.UUID;
 
 @CapacitorPlugin(name = "BluetoothPlugin")
 public class BluetoothPlugin extends Plugin {
-    private BluetoothAdapter bluetoothAdapter;
-    private Handler handler;
+    protected BluetoothAdapter bluetoothAdapter;
+    protected Handler handler;
     private static final UUID MY_UUID = UUID.fromString("00001101-0000-1000-8000-00805F9B34FB"); // Standard SPP UUID
 
     @Override
@@ -77,7 +77,8 @@ public class BluetoothPlugin extends Plugin {
         }
     }
 
-    private void manageConnectedSocket(BluetoothSocket socket, PluginCall call) {
+    @PluginMethod
+    public void manageConnectedSocket(BluetoothSocket socket, PluginCall call) {
         InputStream inputStream;
         try {
             inputStream = socket.getInputStream();
@@ -105,5 +106,12 @@ public class BluetoothPlugin extends Plugin {
 
         call.resolve();
     }
-}
 
+    @PluginMethod
+    public void echo(PluginCall call) {
+        String value = call.getString("value");
+        JSObject ret = new JSObject();
+        ret.put("value", value);
+        call.resolve(ret);
+    }
+}
